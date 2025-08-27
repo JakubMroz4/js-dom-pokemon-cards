@@ -61,8 +61,6 @@ function CreateCard(pokemon){
     let imageUrls = [];
     imageUrls.push(pokemon["sprites"]["other"]["official-artwork"]["front_default"]);
     imageUrls.push(pokemon["sprites"]["other"]["dream_world"]["front_default"]);
-
-    console.log(imageUrls)
     let currentIndex = 0;
 
     img.addEventListener("click", () => {
