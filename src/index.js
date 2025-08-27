@@ -27,6 +27,7 @@ function CreateCard(pokemon){
     img.className = "card--img";
     img.src = pokemon["sprites"]["other"]["official-artwork"]["front_default"];
     img.width = 256;
+    img.height = 256;
 
     const statsList = document.createElement("ul");
     statsList.className = "card--text";
@@ -56,6 +57,18 @@ function CreateCard(pokemon){
     card.appendChild(statsList);
     card.appendChild(gamesHeader)
     card.appendChild(gamesContent)
+
+    let imageUrls = [];
+    imageUrls.push(pokemon["sprites"]["other"]["official-artwork"]["front_default"]);
+    imageUrls.push(pokemon["sprites"]["other"]["dream_world"]["front_default"]);
+
+    console.log(imageUrls)
+    let currentIndex = 0;
+
+    img.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % imageUrls.length;
+        img.src = imageUrls[currentIndex];
+    });
 
     return card;
 }
