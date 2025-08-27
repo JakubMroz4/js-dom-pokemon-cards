@@ -25,7 +25,7 @@ function CreateCard(pokemon){
 
     const img = document.createElement("img");
     img.className = "card--img";
-    img.src = pokemon["sprites"]["front_default"];
+    img.src = pokemon["sprites"]["other"]["official-artwork"]["front_default"];
     img.width = 256;
 
     const statsList = document.createElement("ul");
@@ -34,7 +34,6 @@ function CreateCard(pokemon){
     pokemon.stats.forEach(element => {
         const statItem = document.createElement("li");
         statItem.textContent = `${element.stat.name.toUpperCase()}: ${element.base_stat}`;
-        console.log(element)
         statsList.appendChild(statItem);
     });
 
