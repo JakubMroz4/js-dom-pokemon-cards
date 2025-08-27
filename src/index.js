@@ -37,9 +37,25 @@ function CreateCard(pokemon){
         statsList.appendChild(statItem);
     });
 
+    const gamesHeader = document.createElement("h4");
+    gamesHeader.className = "card--text2";
+    gamesHeader.textContent = "Present in: ";
+
+    const gamesContent = document.createElement("p");
+    gamesContent.className = "card--text2";
+    let gamesString = "";
+
+    pokemon.game_indices.forEach(element => {
+        let name = element.version.name;
+        gamesString += name + ", ";
+    });
+    gamesContent.textContent = gamesString;
+
     card.appendChild(title);
     card.appendChild(img);
     card.appendChild(statsList);
+    card.appendChild(gamesHeader)
+    card.appendChild(gamesContent)
 
     return card;
 }

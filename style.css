@@ -65,3 +65,13 @@ h2 {
 
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
+
+.card--text2 {
+  margin: 1rem;
+
+  border-radius: 5px;
+}
+
+ul {
+      list-style-type: none; /* Removes bullets */
+    }
